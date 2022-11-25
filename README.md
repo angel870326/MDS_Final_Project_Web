@@ -2,12 +2,14 @@
 
 ## Structure
 
+```
 webapp/
     ├── model/
     │   └── model.pkl
     ├── templates/
     │   └── main.html
     └── MDS_final_project_web.ipynb
+```
 
 
 ## References
