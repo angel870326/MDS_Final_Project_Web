@@ -3,7 +3,7 @@
 ## Structure
 
 ```
-MDS_Final_Project/
+MDS_Final_Project_Web/
     ├── model/
     │   └── model.pkl
     ├── templates/
