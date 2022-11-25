@@ -3,7 +3,7 @@
 ## Structure
 
 ```
-webapp/
+MDS_Final_Project/
     ├── model/
     │   └── model.pkl
     ├── templates/
