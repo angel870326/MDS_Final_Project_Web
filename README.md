@@ -9,7 +9,8 @@ MDS_Final_Project_Web/
     ├── model/
     │   └── model.pkl
     ├── templates/
-    │   └── main.html
+    │   └── index.html
+    │   └── predict.html
     ├── static/
     │   └── css/
     │   └── js/
