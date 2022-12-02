@@ -14,6 +14,7 @@ MDS_Final_Project_Web/
     │   └── css/
     │   └── js/
     │   └── assets/
+    │   └── downloads/
     │   └── uploads/
     └── MDS_final_project_web.ipynb
 ```
