@@ -11,9 +11,14 @@ MDS_Final_Project_Web/
     ├── templates/
     │   └── index.html
     │   └── predict.html
+    │   └── adjust.html    
     ├── static/
     │   └── css/
     │   └── js/
+    │      └── scripts.js
+    │      └── Chart.min.js
+    │      └── predict.js
+    │      └── adjust.js
     │   └── assets/
     │   └── downloads/
     │   └── uploads/
