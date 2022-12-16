@@ -38,46 +38,77 @@
                     <div class="col-lg-8 text-center">
                         <h2 class="text-white mt-0">% Silica in Concentrate</h2>
                         <hr class="divider divider-light" />
-                        <p class="text-white-75 mb-4">Graph...</p>
                         <!-- Graph -->
                         <div class="card-body">
                             <div class="chart-area">
                                 <canvas id="myAreaChart"></canvas>
-                           </div>
+                            </div>
+                            <p class="text-white-75 mb-4" style="margin-top: 3rem">
+                                {{anomaly}}
+                            </p>
                         </div>
                         <!-- Adjust Params-->
-                        <p style="margin-top: 3rem">
+                        <div style="margin-top: 3rem">
                             <form method="POST" action="{{ url_for('adjust') }}">
                                 <div class="row">
                                     <div class="col">
-                                        <label class="text-white-75 col-form-label" for="feature1">feature1</label>
-                                        <input type="range" min="-50" max="50" name="slider1" onchange="updateSliderInput1(this.value);" />
+                                        <label class="text-white-75 col-form-label" for="feature1">Starch Flow</label>
+                                        <input type="range" min="-100" max="100" name="slider1" onchange="updateSliderInput(this.value, 'sliderInput1');" />
                                         <output id="sliderInput1" value="" class="text-white-75 mb-4">0%</output>
                                     </div>
                                     <div class="col">
-                                        <label class="text-white-75 col-form-label" for="feature2">feature2</label>
-                                        <input type="range" min="-50" max="50" name="slider2" onchange="updateSliderInput2(this.value);" />
+                                        <label class="text-white-75 col-form-label" for="feature2">Amina Flow</label>
+                                        <input type="range" min="-100" max="100" name="slider2" onchange="updateSliderInput(this.value, 'sliderInput2');" />
                                         <output id="sliderInput2" value="" class="text-white-75 mb-4">0%</output>
                                     </div>
                                     <div class="col">
-                                        <label class="text-white-75 col-form-label" for="feature3">feature3</label>
-                                        <input type="range" min="-50" max="50" name="slider3" onchange="updateSliderInput3(this.value);" />
+                                        <label class="text-white-75 col-form-label" for="feature3">Ore Pulp pH</label>
+                                        <input type="range" min="-100" max="100" name="slider3" onchange="updateSliderInput(this.value, 'sliderInput3');" />
                                         <output id="sliderInput3" value="" class="text-white-75 mb-4">0%</output>
                                     </div>
                                     <div class="col">
-                                        <label class="text-white-75 col-form-label" for="feature4">feature4</label>
-                                        <input type="range" min="-50" max="50" name="slider4" onchange="updateSliderInput4(this.value);" />
+                                        <label class="text-white-75 col-form-label" for="feature4">Ore Pulp Density</label>
+                                        <input type="range" min="-100" max="100" name="slider4" onchange="updateSliderInput(this.value, 'sliderInput4');" />
                                         <output id="sliderInput4" value="" class="text-white-75 mb-4">0%</output>
                                     </div>
+                                <!-- </div> -->
+                                <!-- <div class="row"> -->
                                     <div class="col">
-                                        <label class="text-white-75 col-form-label" for="feature5">feature5</label>
-                                        <input type="range" min="-50" max="50" name="slider5" onchange="updateSliderInput5(this.value);" />
+                                        <label class="text-white-75 col-form-label" for="feature5">Flotation 01 AF</label>
+                                        <input type="range" min="-100" max="100" name="slider5" onchange="updateSliderInput(this.value, 'sliderInput5');" />
                                         <output id="sliderInput5" value="" class="text-white-75 mb-4">0%</output>
-                                    </div>                                                                                                            
+                                    </div>
+                                    <div class="col">
+                                        <label class="text-white-75 col-form-label" for="feature6">Flotation 06 AF</label>
+                                        <input type="range" min="-100" max="100" name="slider6" onchange="updateSliderInput(this.value, 'sliderInput6');" />
+                                        <output id="sliderInput6" value="" class="text-white-75 mb-4">0%</output>
+                                    </div>
+                                <!-- </div> -->
+                                <!-- <div class="row"> -->
+                                    <div class="col">
+                                        <label class="text-white-75 col-form-label" for="feature7">Flotation 03 Level</label>
+                                        <input type="range" min="-100" max="100" name="slider7" onchange="updateSliderInput(this.value, 'sliderInput7');" />
+                                        <output id="sliderInput7" value="" class="text-white-75 mb-4">0%</output>
+                                    </div>
+                                    <div class="col">
+                                        <label class="text-white-75 col-form-label" for="feature8">Flotation 04 Level</label>
+                                        <input type="range" min="-100" max="100" name="slider8" onchange="updateSliderInput(this.value, 'sliderInput8');" />
+                                        <output id="sliderInput8" value="" class="text-white-75 mb-4">0%</output>
+                                    </div>
+                                    <div class="col">
+                                        <label class="text-white-75 col-form-label" for="feature9">Flotation 05 Level</label>
+                                        <input type="range" min="-100" max="100" name="slider9" onchange="updateSliderInput(this.value, 'sliderInput9');" />
+                                        <output id="sliderInput9" value="" class="text-white-75 mb-4">0%</output>
+                                    </div>
+                                    <div class="col">
+                                        <label class="text-white-75 col-form-label" for="feature10">Flotation 07 Level</label>
+                                        <input type="range" min="-100" max="100" name="slider10" onchange="updateSliderInput(this.value, 'sliderInput10');" />
+                                        <output id="sliderInput10" value="" class="text-white-75 mb-4">0%</output>
+                                    </div>
                                 </div>
                                 <input type="submit" class="btn-light btn-xl" value="Adjust"/>
                             </form>
-                        </p>
+                        </div>
                     </div>
                 </div>
             </div>
