@@ -100,7 +100,7 @@ function createLineChart(data) {
             maxTicksLimit: 5,
             padding: 10,
             callback: function(value, index, values) {
-              return number_format(value) + '%';
+              return value + '%';
             }
           },
           gridLines: {
@@ -132,7 +132,7 @@ function createLineChart(data) {
         callbacks: {
           label: function(tooltipItem, chart) {
             var datasetLabel = chart.datasets[tooltipItem.datasetIndex].label || '';
-            return datasetLabel + " " + number_format(tooltipItem.yLabel) + '%';
+            return datasetLabel + " " + tooltipItem.yLabel + '%';
           }
         } 
       }

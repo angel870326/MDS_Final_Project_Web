@@ -82,7 +82,7 @@ function createLineChart(data) {
             maxTicksLimit: 5,
             padding: 10,
             callback: function(value, index, values) {
-              return number_format(value) + '%';
+              return value + '%';
             }
           },
           gridLines: {
@@ -114,7 +114,7 @@ function createLineChart(data) {
         callbacks: {
           label: function(tooltipItem, chart) {
             var datasetLabel = chart.datasets[tooltipItem.datasetIndex].label || '';
-            return number_format(tooltipItem.yLabel) + datasetLabel;
+            return tooltipItem.yLabel + datasetLabel;
           }
         } 
       }
@@ -129,18 +129,6 @@ function createLineChart(data) {
 function updateSliderInput(val, sliderInputID) {
   document.getElementById(sliderInputID).value=val+'%'; 
 }
-// function updateSliderInput2(val) {
-//   document.getElementById('sliderInput2').value=val+'%'; 
-// }
-// function updateSliderInput3(val) {
-//   document.getElementById('sliderInput3').value=val+'%'; 
-// }
-// function updateSliderInput4(val) {
-//   document.getElementById('sliderInput4').value=val+'%'; 
-// }
-// function updateSliderInput5(val) {
-//   document.getElementById('sliderInput5').value=val+'%'; 
-// }
 
   // Add dataset
   // $('addDataset').click(function() {
