@@ -2,6 +2,11 @@
 
 Flask + Bootstrap + [Chart.js](https://www.chartjs.org/docs/latest/)
 
+## Demo (40 seconds, Mandarin)
+
+https://user-images.githubusercontent.com/44830635/209428983-072d7250-bb72-4575-98f7-0f45078206e7.mp4
+
+
 ## Structure
 
 ```
