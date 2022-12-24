@@ -1,27 +1,33 @@
 # MDS Final Project Web
 
-Flask + Bootstrap
+Flask + Bootstrap + [Chart.js](https://www.chartjs.org/docs/latest/)
 
 ## Structure
 
 ```
 MDS_Final_Project_Web/
-    ├── model/
-    │   └── model.pkl
     ├── templates/
-    │   └── index.html
-    │   └── predict.html
-    │   └── adjust.html    
+    │       └── index.html
+    │       └── predict.html
+    │       └── adjust.html    
     ├── static/
-    │   └── css/
-    │   └── js/
-    │      └── scripts.js
-    │      └── Chart.min.js
-    │      └── predict.js
-    │      └── adjust.js
-    │   └── assets/
-    │   └── downloads/
-    │   └── uploads/
+    │       └── assets/
+    │              └── img/
+    │              └── favicon.ico
+    │       └── css/
+    │              └── styles.css
+    │       └── js/
+    │              └── scripts.js
+    │              └── Chart.min.js
+    │              └── predict.js
+    │              └── adjust.js
+    │       └── downloads/
+    │              └── template.csv
+    │       └── uploads/
+    │              └── df_demo.csv
+    │       └── model/
+    │              └──  model.pt
+    │              └──  scaler.save
     └── MDS_final_project_web.ipynb
 ```
 
@@ -35,8 +41,11 @@ MDS_Final_Project_Web/
 5. Upload and Display CSV file in html table Flask Python<br/>https://thinkinfi.com/flask-upload-display-file/
 6. 使用 Flask 下載檔案<br/>https://www.delftstack.com/zh-tw/howto/python-flask/flask-download-file/
 7. Chart.js Line Chart<br/>https://www.chartjs.org/docs/latest/samples/line/line.html
-8. Input type range show range value<br/>https://stackoverflow.com/questions/10004723/html5-input-type-range-show-range-value
-9. [Flask 教學] 使用 Dictionary 儲存與傳遞資料到 template<br/>https://tools.wingzero.tw/article/sn/1252
+8. Creating Real-Time Charts with Flask<br/>https://ron.sh/creating-real-time-charts-with-flask/
+9. Input type range show range value<br/>https://stackoverflow.com/questions/10004723/html5-input-type-range-show-range-value
+10. [Flask 教學] 使用 Dictionary 儲存與傳遞資料到 template<br/>https://tools.wingzero.tw/article/sn/1252
+
+
 
 
 ## Templates
