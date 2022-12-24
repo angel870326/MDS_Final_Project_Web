@@ -30,6 +30,7 @@ function number_format(number, decimals, dec_point, thousands_sep) {
 
 // Line Chart
 var mainColor = "rgba(75, 121, 254, 1)"
+var secondColor = "rgba(254, 75, 121, 1)"
 
 function createLineChart(data) {
   console.log("JS loads data from Python", data);
@@ -38,21 +39,32 @@ function createLineChart(data) {
     type: 'line',
     data: {
       labels: result.labels,
-      datasets: [{
-        label: "%",
-        data: result.values,     
-        lineTension: 0.3,
-        backgroundColor: "rgba(75, 121, 254, 0.1)",
-        borderColor: mainColor,
-        pointRadius: 3,
-        pointBackgroundColor: mainColor,
-        pointBorderColor: mainColor,
-        pointHoverRadius: 3,
-        pointHoverBackgroundColor: mainColor,
-        pointHoverBorderColor: mainColor,
-        pointHitRadius: 10,
-        pointBorderWidth: 2,
-      }]
+      datasets: [
+        {
+          label: "Threshold (4.5%)",
+          data: result.threshold,     
+          lineTension: 0.3,
+          borderColor: secondColor,
+          backgroundColor: "rgba(75, 121, 254, 0)",
+          pointRadius: 0,
+          pointHoverRadius: 0,
+        },
+        {
+          label: "Prediction",
+          data: result.values,     
+          lineTension: 0.3,
+          backgroundColor: "rgba(75, 121, 254, 0.1)",
+          borderColor: mainColor,
+          pointRadius: 3,
+          pointBackgroundColor: mainColor,
+          pointBorderColor: mainColor,
+          pointHoverRadius: 3,
+          pointHoverBackgroundColor: mainColor,
+          pointHoverBorderColor: mainColor,
+          pointHitRadius: 10,
+          pointBorderWidth: 2,
+        },
+      ]
     },
     options: {
       maintainAspectRatio: false,
@@ -95,7 +107,7 @@ function createLineChart(data) {
         }],
       },
       legend: {
-        display: false
+        display: true,  // display legend
       },
       tooltips: {
         backgroundColor: "rgb(255,255,255)",
@@ -113,8 +125,12 @@ function createLineChart(data) {
         caretPadding: 10,
         callbacks: {
           label: function(tooltipItem, chart) {
-            var datasetLabel = chart.datasets[tooltipItem.datasetIndex].label || '';
-            return tooltipItem.yLabel + datasetLabel;
+            if (tooltipItem.yLabel != 4.5) {
+              if (tooltipItem.yLabel > 4.5) {
+                return tooltipItem.yLabel + '% -> Above threshold!';
+              }
+              return tooltipItem.yLabel + '%';
+            }
           }
         } 
       }
@@ -129,27 +145,6 @@ function createLineChart(data) {
 function updateSliderInput(val, sliderInputID) {
   document.getElementById(sliderInputID).value=val+'%'; 
 }
-
-  // Add dataset
-  // $('addDataset').click(function() {
-  //   var newDataset = {
-  //       label: "%",      
-  //       lineTension: 0.3,
-  //       backgroundColor: "rgba(78, 115, 223, 0.05)",
-  //       borderColor: "rgba(78, 115, 223, 1)",
-  //       pointRadius: 3,
-  //       pointBackgroundColor: "rgba(78, 115, 223, 1)",
-  //       pointBorderColor: "rgba(78, 115, 223, 1)",
-  //       pointHoverRadius: 3,
-  //       pointHoverBackgroundColor: "rgba(78, 115, 223, 1)",
-  //       pointHoverBorderColor: "rgba(78, 115, 223, 1)",
-  //       pointHitRadius: 10,
-  //       pointBorderWidth: 2,
-  //       data: [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10],
-  //   }
-  //   myLineChart.config.data.datasets.push(newDataset);
-  //   myLineChart.update();
-  // });
 
 
 
